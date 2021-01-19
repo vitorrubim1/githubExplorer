@@ -84,10 +84,12 @@ export const Repositories = styled.div`
       height: 64px;
       width: 64px;
       border-radius: 50%;
+      flex-shrink: 0;
     }
 
     div {
-      margin-left: 16px;
+      margin: 0 16px;
+      flex: 1;
 
       strong {
         font-size: 20px;

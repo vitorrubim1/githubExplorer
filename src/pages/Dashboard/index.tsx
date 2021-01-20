@@ -1,4 +1,5 @@
 import React, { useState, useEffect, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 
 import logoImg from "../../assets/logo.svg";
@@ -78,24 +79,24 @@ const Dashboard: React.FC = () => {
       {inputError && <Error> {inputError} </Error>}
 
       <Repositories>
-        {repositories.map((repositories, index) => (
-          <a href="#">
+        {repositories.map((repository, index) => (
+          <Link to={`/repository/${repository.full_name}`} key={index}>
             <img
               key={index}
-              src={repositories.owner.avatar_url}
+              src={repository.owner.avatar_url}
               alt="Avatar of owner repository"
             />
             <div>
-              <strong>{repositories.owner.login}</strong>
+              <strong>{repository.owner.login}</strong>
               <p>
-                {repositories.description
-                  ? repositories.description
+                {repository.description
+                  ? repository.description
                   : "Não há descrição."}
               </p>
             </div>
 
             <FiChevronRight size={20} />
-          </a>
+          </Link>
         ))}
       </Repositories>
     </>

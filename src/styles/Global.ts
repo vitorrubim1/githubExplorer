@@ -9,6 +9,7 @@ export default createGlobalStyle`
     outline: 0;
 
     text-decoration: none;
+    list-style: none;
 
     box-sizing: border-box;
   }

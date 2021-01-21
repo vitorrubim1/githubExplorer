@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
     event.preventDefault();
 
     if (!newRepository) {
-      setInputError("Digite o autor/nome do repositório");
+      setInputError("Digite o autor/nome do repositório. Ex: 'facebook/react'");
       return; //pra evitar que o código continue executando
     }
 
@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
 
       <Form hasError={Boolean(inputError)} onSubmit={handleAddRepository}>
         <input
-          placeholder="Digite o nome do repositório"
+          placeholder="Digite o nome do autor/repositório:"
           value={newRepository}
           onChange={(event) => setNewRepository(event.target.value)}
         />
